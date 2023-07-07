@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:venta_casas/src/pages/casas/pagos/list/casas_pagos_list.dart';
+import 'package:venta_casas/src/pages/catalogo/casas/list/catalogo_casas_list_page.dart';
+import 'package:venta_casas/src/pages/client/products/list/client_products_list_page.dart';
+import 'package:venta_casas/src/pages/client/profile/info/client_profile_info_page.dart';
 import 'package:venta_casas/src/pages/home/home_page.dart';
 import 'package:venta_casas/src/pages/login/login_page.dart';
 import 'package:venta_casas/src/pages/models/user.dart';
@@ -32,11 +36,15 @@ class _MyAppState extends State<MyApp> {
       //ocupa las funcionalidades de Get
       title: 'VENTA CASAS',
       debugShowCheckedModeBanner: false,
-      initialRoute: userSession.id != null ? '/home' : '/',
+      initialRoute: userSession.id != null ? '/client/products/list' : '/client/products/list',
       getPages: [
         GetPage(name: '/', page: () => LoginPage()),
         GetPage(name: '/register', page: () => RegisterPage()),
         GetPage(name: '/home', page: () => HomePage()),
+        GetPage(name: '/casas/pagos/list', page:()=> CasasPagosListPage()),
+         GetPage(name: '/catalogo/casas/list', page:()=> CatalogoCasasList()),  
+        GetPage(name: '/client/products/list', page:()=> ClientProductsPageList()),
+        GetPage(name: '/client/profile/info', page:()=> ClientProfileInfoPage())
       ],
       navigatorKey: Get.key,
     );
