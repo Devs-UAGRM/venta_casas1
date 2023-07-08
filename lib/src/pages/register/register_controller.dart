@@ -10,7 +10,7 @@ import 'package:venta_casas/src/providers/users_provider.dart';
 class RegisterController extends GetxController {
   TextEditingController emailController = TextEditingController();
   TextEditingController nameController = TextEditingController();
-  TextEditingController lastnameController = TextEditingController();
+  //TextEditingController lastnameController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController confirmPasswordController = TextEditingController();
@@ -21,22 +21,24 @@ class RegisterController extends GetxController {
   File? imageFile;
 
   void register() async {
-    String email = emailController.text.trim();
     String name = nameController.text;
-    String lastname = lastnameController.text;
+    String email = emailController.text.trim();
+    
+    //String lastname = lastnameController.text;
     String phone = phoneController.text;
     String password = passwordController.text.trim();
     String confirmPassword = confirmPasswordController.text.trim();
     print('Email ${email}');
     print('Password ${password}');
 
-    if (isValidForm(email, name, lastname, phone, password, confirmPassword)) {
+    if (isValidForm(email, name, phone, password, confirmPassword)) {
       User user = User(
           email: email,
           name: name,
-          lastname: lastname,
+          // lastname: lastname,
           phone: phone,
-          password: password);
+          password: password
+          );
 
       Response response = await usersProvider.create(user);
 
@@ -46,7 +48,9 @@ class RegisterController extends GetxController {
     }
   }
 
-  bool isValidForm(String email, String name, String lastname, String phone,
+  bool isValidForm(String email, String name, 
+  //String lastname,
+   String phone,
       String password, String confirmPassword) {
     if (!GetUtils.isEmail(email)) {
       Get.snackbar('  Formulario no valido', 'El email no es valido');
@@ -61,10 +65,10 @@ class RegisterController extends GetxController {
       Get.snackbar('Formulario no valido', 'Debe ingresar tu nombre');
       return false;
     }
-    if (lastname.isEmpty) {
-      Get.snackbar('Formulario no valido', 'Debe ingresar tu apellido');
-      return false;
-    }
+    // if (lastname.isEmpty) {
+    //   Get.snackbar('Formulario no valido', 'Debe ingresar tu apellido');
+    //   return false;
+    // }
     if (phone.isEmpty) {
       Get.snackbar(
           'Formulario no valido', 'Debe ingresar tu numero telefonico');

@@ -36,7 +36,7 @@ class _MyAppState extends State<MyApp> {
       //ocupa las funcionalidades de Get
       title: 'VENTA CASAS',
       debugShowCheckedModeBanner: false,
-      initialRoute: userSession.id != null ? '/client/products/list' : '/client/products/list',
+      initialRoute: userSession.id != null ? '/' : '/',
       getPages: [
         GetPage(name: '/', page: () => LoginPage()),
         GetPage(name: '/register', page: () => RegisterPage()),

@@ -13,7 +13,7 @@ class User {
   String? id;
   String? email;
   String? name;
-  String? lastname;
+  //String? lastname;
   //String? emai;
   String? phone;
   String? image;
@@ -24,7 +24,7 @@ class User {
       {this.id,
       this.email,
       this.name,
-      this.lastname,
+      //this.lastname,
       //this.emai,
       this.phone,
       this.image,
@@ -35,7 +35,7 @@ class User {
         id: json["id"],
         email: json["email"],
         name: json["name"],
-        lastname: json["lastname"],
+       // lastname: json["lastname"],
         //emai: json["emai"],
         phone: json["phone"],
         image: json["image"],
@@ -47,7 +47,7 @@ class User {
         "id": id,
         "email": email,
         "name": name,
-        "lastname": lastname,
+       //"lastname": lastname,
         //"emai": emai,
         "phone": phone,
         "image": image,

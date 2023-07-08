@@ -41,12 +41,14 @@ class RegisterPage extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(children: [
           _textYourInfo(),
-          _textFielEmail(),
           _textFielName(),
-          _textFielLastName(),
-          _textFielPhone(),
+          _textFielEmail(),
           _textFielPassword(),
           _textFielConfirmPassword(),
+          
+          // _textFielLastName(),
+          _textFielPhone(),
+          
           _buttonRegister()
         ]),
       ),
@@ -151,18 +153,18 @@ class RegisterPage extends StatelessWidget {
   }
 
   //----------------------------------------------
-  Widget _textFielLastName() {
-    return Container(
-      margin: EdgeInsets.symmetric(vertical: 5, horizontal: 40),
-      child: TextField(
-        controller: con.lastnameController,
-        keyboardType: TextInputType.text,
-        decoration: InputDecoration(
-            hintText: 'Apellido',
-            prefixIcon: Icon(Icons.person_outline_outlined)),
-      ),
-    );
-  }
+  // Widget _textFielLastName() {
+  //   return Container(
+  //     margin: EdgeInsets.symmetric(vertical: 5, horizontal: 40),
+  //     child: TextField(
+  //       controller: con.lastnameController,
+  //       keyboardType: TextInputType.text,
+  //       decoration: InputDecoration(
+  //           hintText: 'Apellido',
+  //           prefixIcon: Icon(Icons.person_outline_outlined)),
+  //     ),
+  //   );
+  // }
 
   //----------------------------------------------
   Widget _textFielPhone() {
